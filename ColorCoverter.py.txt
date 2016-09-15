@@ -1,0 +1,53 @@
+# this color mixed takes two color and tells us whats the result is.
+# it need primary colors, red, yellow, blue and give sus result
+
+# this fucntiong gets a color from the user --- and it returns the value to the program
+
+def getColor():
+    color = raw_input(" Enter Red Yellow or Blue: ")
+    color = color.upper() #this .uppp function converts to uppercase
+
+    #validate the input data validation
+    #test for bad data not good
+    while color != "RED" and color != "BLUE" and color!= "YELLOW":
+        color = raw_input(" BAD Color Data Enter Red Yellow or Blue: ")
+        color.upper()
+    #got good data
+    return color
+
+#this function finds resulting color when two colors are combined
+#Colors must be red, yellow , blue
+def checkColors(one, two):
+    #tests first colro
+    if one == "BLUE ":
+        if two == "RED ":
+            result = "PURPLE "
+        else:
+            result = "GREEN "
+    elif one == "RED ":
+        if two == "BLUE ":
+            result = "PURPLE "
+        else:
+             result == "ORANGE "
+    else:
+        if two == "RED ":
+            result = "ORANGE "
+        else:
+            result = "GREEN "
+    return result
+
+
+
+## Main program
+
+print ("This program accepts two primary colors and tells you")
+print ("the result when they are combined")
+
+firstColor = getColor() #gets color
+
+secondColor = getColor()
+resultColor = checkColors(firstColor, secondColor) #check the result
+while firstColor == secondColor:
+    print(" I need two different color ")
+    secondColor = checkColor(firstColor, secondColor)
+print (firstColor + " and " + secondColor + " makes " +resultColor)
